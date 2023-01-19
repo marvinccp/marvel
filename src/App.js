@@ -1,24 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Header } from "./components/Header";
+import { Main } from "./components/Main";
+import { Image } from "./components/Image";
+import marvel_retro from "./marvel-retro.jpg";
+import { getApiInfo } from "./components/helpers/getApiInfo";
+import { Select } from "./components/Select";
 
 function App() {
+  const [stateCharacter, setStateCharacter] = React.useState([]);
+  const [name, setName] = React.useState("Retro Characters");
+  const [formData, setFormData] = React.useState(`${marvel_retro}`);
+
+  console.log(name);
+
+  React.useEffect(() => {
+    getApiInfo()
+      .then((marvelCharacters) => {
+      setStateCharacter(marvelCharacters);
+    });
+  }, []);
+
+
+
+  const handleChange = (e) => {
+    const character = e.target.value;
+    setFormData(character);
+    changeName(character);
+  };
+
+  const changeName = (character) =>
+    setName(
+      stateCharacter.map((person) => {
+        let imageURL = `${person.thumbnail.path}.${person.thumbnail.extension}`;
+        let imageIncludes = imageURL.includes("image_not_available");
+        if (imageURL === character && !imageIncludes) {
+          let name = person.name;
+          return name
+        } 
+      })
+      );
+      console.log(name);
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header name={name} />
+      <Main name={name}>
+        <Select
+          stateCharacter={stateCharacter}
+          formData={formData}
+          name={name}
+          handleChange={handleChange}
+          marvel_retro={marvel_retro}
+        />
+        <Image formData={formData} />
+      </Main>
+    </>
   );
 }
 
