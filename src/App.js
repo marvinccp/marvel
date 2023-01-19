@@ -54,6 +54,7 @@ function App() {
           marvel_retro={marvel_retro}
         />
         <Image formData={formData} />
+        
       </Main>
     </>
   );

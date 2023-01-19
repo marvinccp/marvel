@@ -1,5 +1,5 @@
 import React from "react";
-
+import Footer from '../components/Footer'
 const Main = ({ name,  children }) => {
   return (
     <main className="main-container">
@@ -8,6 +8,7 @@ const Main = ({ name,  children }) => {
         <h1 className="text-name">{ name }</h1>
       </header>
       {children}
+      <Footer />
     </main>
   );
 };

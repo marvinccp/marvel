@@ -1,7 +1,8 @@
 import React from 'react'
 
-const Title = ({name}) => {
+const Title = ({ name }) => {
     
+  console.log(name)
 
   return (
     <div>

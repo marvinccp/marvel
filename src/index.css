@@ -3,56 +3,79 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
-    box-sizing: border-box;
-    padding: 0;
-    font-family: 'Karla',
+  box-sizing: border-box;
+  padding: 0;
+  font-family: 'Karla',
     sans-serif;
 }
 
-.header-container{
+.header-container {
   padding: 25px;
   background-color: rgb(0, 0, 0);
   display: flex;
-  height: 7vh;
+  height: 5vh;
   align-items: center;
   justify-content: center;
-
+  position: fixed;
+  width: 100%;
+  top: 0;
 }
-.header-container img{
+
+.header-container img {
   height: 70px;
 }
-.header-container h2{
-  color:white
+
+.header-container h2 {
+  color: white
 }
 
-main h3{
+main h3 {
   padding: 25px;
 
 }
-footer{
+
+footer {
   background-color: burlywood;
-  height: 7vh;
+  height: 4vh;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: rgb(230, 57, 57);
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.main-container{
+
+.main-container {
   display: flex;
   flex-direction: column;
-    align-items: center;
+  align-items: center;
+  margin: 120px auto 60px auto;
+  max-width: 88%;
 }
-.main-header{
+
+.main-header {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
   align-items: center;
 }
-.main-header h4{
-  margin: 25px;
+
+.main-header h4 {
+  margin: 25px 0 0 0;
   font-size: 17px;
 }
-.select-container{
+.main-header h1 {
+  margin: 15px 0 10px 0;
+}
+
+.select-container {
   display: flex;
   justify-content: center;
 }
-.select-caharacters{
+
+.select-caharacters {
   height: 40px;
   width: 280px;
   border: none;
@@ -63,52 +86,58 @@ footer{
   margin-bottom: 15px;
   text-align: center;
 }
+
 .select-caharacters:focus {
- outline: rgb(104, 104, 104);
+  outline: rgb(104, 104, 104);
 }
 
 .image-container {
-  display: flex ;
+  display: flex;
   flex-direction: column;
   margin: 0 auto;
   width: 85%;
 }
-.image-container .character-image{
+
+.image-container .character-image {
   width: 95%;
 }
-.text-name{
+
+.text-name {
   text-align: center;
   margin: 30px;
   color: #555555;
 }
 
 @media (min-width: 768px) {
- .image-container .character-image {
-   width: 50%;
-   margin: 0 auto;
- }
+  .image-container .character-image {
+    width: 50%;
+    margin: 0 auto;
+  }
 }
 
-.loader{
+.loader {
   color: red;
-text-align: center;
-margin: 100px;
+  text-align: center;
+  margin: 100px;
 
 }
-.imageCharacter-header-container{
 
-display: flex;
-justify-content: center;
+.imageCharacter-header-container {
+
+  display: flex;
+  justify-content: center;
 
 
 }
+
 .image-container-main-miniature {
   display: flex;
   border-radius: 50%;
   width: 10%;
   justify-content: flex-start;
 }
-.miniature-main-image{
+
+.miniature-main-image {
   width: 100%;
   border-radius: 50%;
 }
